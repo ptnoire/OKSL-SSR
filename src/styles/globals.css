@@ -16,7 +16,7 @@ body {
   --oksl-gradient-: linear-gradient(131deg, #ef6c00 0%, #fff720 48%, #00eab7 100%);
 }
 
-h1, h2, h3, p { color: var(--white); margin: 10px; }
+h1, h2, h3, p { color: var(--white-); margin: 10px; }
 
 button {
   background: none;

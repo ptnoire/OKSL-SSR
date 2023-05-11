@@ -64,10 +64,18 @@ export function NavBar() {
       </button>
       {!!showMenu && (
         <div className={styles.dropMenu}>
-          <h2>Rankings</h2>
-          <h2>Events</h2>
-          <h2>Brackets</h2>
-          <h2>Contact</h2>
+          <Link href="/rankings">
+            <h2>Rankings</h2>
+          </Link>
+          <Link href="/events">
+            <h2>Events</h2>
+          </Link>
+          <Link href="/brackets">
+            <h2>Brackets</h2>
+          </Link>
+          <Link href="/contact">
+            <h2>Contact</h2>
+          </Link>
         </div>
       )}
     </div>
