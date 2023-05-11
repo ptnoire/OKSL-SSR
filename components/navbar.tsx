@@ -1,7 +1,7 @@
 import styles from "./component-styles/navbar.module.css";
-import youtube from "../src/img/youtube.svg";
-import discord from "../src/img/discord.svg";
-import twitch from "../src/img/twitch.svg";
+import youtube from "../src/img/ytRe2.png";
+import discord from "../src/img/discordRe3.png";
+import twitch from "../src/img/twitchRe2.png";
 import okslLogo from "../src/img/okslLogo.png";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -27,7 +27,7 @@ export function NavBar() {
         target="_blank"
         ref={anchorRef}
       >
-        <Image src={youtube} width={45} height={45} alt="youtube" />
+        <Image src={youtube} alt="youtube" />
       </a>
 
       <a
@@ -37,7 +37,7 @@ export function NavBar() {
         target="_blank"
         ref={anchorRef}
       >
-        <Image src={discord} width={45} height={45} alt="discord" />
+        <Image src={discord} alt="discord" />
       </a>
 
       <a
@@ -47,7 +47,7 @@ export function NavBar() {
         target="_blank"
         ref={anchorRef}
       >
-        <Image src={twitch} width={45} height={45} alt="twitch" />
+        <Image src={twitch} alt="twitch" />
       </a>
       <button className={styles.button}>
         <FontAwesomeIcon icon={faChevronDown} className={styles.faIcon} />
