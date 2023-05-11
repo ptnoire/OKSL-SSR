@@ -4,9 +4,10 @@ import discord from "../src/img/discordRe3.png";
 import twitch from "../src/img/twitchRe2.png";
 import okslLogo from "../src/img/okslLogo.png";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 export function NavBar() {
   const anchorRef = useRef<HTMLAnchorElement>(null);
@@ -17,9 +18,13 @@ export function NavBar() {
     }
   }, []);
 
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <div className={styles.nav_bar}>
-      <Image className={styles.logo} src={okslLogo} alt="logo" />
+      <Link href="/">
+        <Image className={styles.logo} src={okslLogo} alt="logo" />
+      </Link>
       <a
         className={styles.icons}
         referrerPolicy="no-referrer"
@@ -33,7 +38,7 @@ export function NavBar() {
       <a
         className={styles.icons}
         referrerPolicy="no-referrer"
-        href="https://www.youtube.com/channel/UCvlCJTZo-k6peOxQTvxgnVw"
+        href="https://discord.gg/ut3dXfY"
         target="_blank"
         ref={anchorRef}
       >
@@ -43,15 +48,28 @@ export function NavBar() {
       <a
         className={styles.icons}
         referrerPolicy="no-referrer"
-        href="https://www.youtube.com/channel/UCvlCJTZo-k6peOxQTvxgnVw"
+        href="https://www.twitch.tv/okanagansmashleague"
         target="_blank"
         ref={anchorRef}
       >
         <Image src={twitch} alt="twitch" />
       </a>
-      <button className={styles.button}>
-        <FontAwesomeIcon icon={faChevronDown} className={styles.faIcon} />
+      <button className={styles.button} onClick={() => setShowMenu(!showMenu)}>
+        {!showMenu && (
+          <FontAwesomeIcon icon={faChevronDown} className={styles.faIcon} />
+        )}
+        {!!showMenu && (
+          <FontAwesomeIcon icon={faChevronUp} className={styles.faIcon} />
+        )}
       </button>
+      {!!showMenu && (
+        <div className={styles.dropMenu}>
+          <h2>Rankings</h2>
+          <h2>Events</h2>
+          <h2>Brackets</h2>
+          <h2>Contact</h2>
+        </div>
+      )}
     </div>
   );
 }

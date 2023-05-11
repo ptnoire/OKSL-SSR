@@ -13,18 +13,21 @@
     padding-right: 10px;
 }
 
-.button:active {
-    transform: rotate(90deg);
-    transition: transform 1s ease-in;
-}
-
 .faIcon {
     width: 40px;
     height: auto;
+    animation: fadeIn .3s ease-in;
 }
 
 .icons {
     margin: 6px;
+    transition: .3s ease-in;
+}
+
+.icons:hover {
+    transform: scale(1.1);
+    filter:invert(.3);
+    transition: all .3s ease-in;
 }
 
 .logo {
@@ -35,9 +38,33 @@
     width: auto;
 }
 
-@media only screen and (max-width: 1100px) {
+.dropMenu {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 5.3rem; left: 0;
+    border: 1px solid var(--white-);
+    border-radius: 20px;
+    background-color: var(--background-black-);
+    width: 100%;
+    box-shadow: 0 6px 6px -4px rgb(0, 0, 0);
+    animation: fadeIn .3s ease-in;
+    z-index: 4;
+}
+
+@media only screen and (max-width: 900px) {
     .logo {
         top: .9rem;
         height: 70%;
     }
+    .dropMenu {
+        flex-direction: column;
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
