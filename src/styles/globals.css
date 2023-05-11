@@ -6,6 +6,24 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --black-: #212529;
+  --white-: #f5f5dc;
+  --background-black-: #141414ee;
+  --oksl-orange-: #ef6c00;
+  --oksl-blue-: #00eab7;
+  --oksl-yellow-: #fff720;
+  --oksl-gradient-: linear-gradient(131deg, #ef6c00 0%, #fff720 48%, #00eab7 100%);
+}
+
+h1, h2, h3, p { color: var(--white); margin: 10px; }
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
