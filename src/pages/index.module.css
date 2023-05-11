@@ -1,15 +1,24 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid; 
+  grid-template-columns: 1fr 0.2fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "contentArea socialsDisplay";
   min-height: 100vh;
-  background: #fffed5;
-  background-image: url("../img/waves.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   overflow-x: hidden;
+}
+
+.contentArea, .socialsDisplay {
+  margin: 6rem 2rem 0 1rem;
+}
+
+.contentArea {
+  grid-area: contentArea;
+}
+
+.socialsDisplay {
+  grid-area: socialsDisplay;
 }
 
 .container {
